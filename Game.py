@@ -1,3 +1,4 @@
+from Path import get_path
 import pygame
 import Scratch_Cat
 import Ball
@@ -16,9 +17,12 @@ class Maze:
         pygame.init()
         self.cat = Scratch_Cat.ScratchCat()
         self.ball_class = Ball.Ball()
-        self.backdrop = pygame.image.load("Images\\Maze.png")
-        self.scratch_cat = pygame.transform.scale(pygame.image.load("Images\\Scratch Cat.png"), (self.cat.width, self.cat.height))
-        self.ball = pygame.image.load("Images\\Ball.png")
+        self.backdrop = pygame.image.load(get_path("Images/Maze.png"))
+        self.scratch_cat = pygame.transform.scale(
+            pygame.image.load(get_path("Images/Scratch Cat.png")),
+            (self.cat.width, self.cat.height)
+        )
+        self.ball = pygame.image.load(get_path("Images/Ball.png"))
         self.font1 = pygame.font.SysFont("Times New Roman", 14)
         pygame.display.set_caption("Maze Game")
         self.screen = pygame.display.set_mode((480, 360))
